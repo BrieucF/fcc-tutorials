@@ -54,6 +54,11 @@ geoservice.OutputLevel = WARNING
 from Configurables import SimG4Svc
 geantservice = SimG4Svc("SimG4Svc", detector='SimG4DD4hepDetector', physicslist="SimG4FtfpBert", actions="SimG4FullSimActions")
 
+# Fixed seed to have reproducible results, change it for each job if you split one production into several jobs
+# Mind that if you leave Gaudi handle random seed and some job start within the same second (very likely) you will have duplicates
+geantservice.randomNumbersFromGaudi = False
+geantservice.seedValue = 42
+
 # Expected range in a given material under which all the particle energy is automatically deposited in the given cell (no further interaction simulated)
 geantservice.g4PreInitCommands += ["/run/setCut 0.1 mm"]
 
