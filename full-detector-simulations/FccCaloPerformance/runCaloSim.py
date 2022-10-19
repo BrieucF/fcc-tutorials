@@ -23,7 +23,7 @@ pgun.PdgCodes = [pdgCode]
 pgun.MomentumMin = momentum * GeV
 pgun.MomentumMax = momentum * GeV
 pgun.PhiMin = 0
-pgun.PhiMax = 0
+pgun.PhiMax = 2 * _pi
 pgun.ThetaMin = thetaMin * _pi / 180.
 pgun.ThetaMax = thetaMax * _pi / 180.
 
@@ -57,7 +57,7 @@ geantservice = SimG4Svc("SimG4Svc", detector='SimG4DD4hepDetector', physicslist=
 # Fixed seed to have reproducible results, change it for each job if you split one production into several jobs
 # Mind that if you leave Gaudi handle random seed and some job start within the same second (very likely) you will have duplicates
 geantservice.randomNumbersFromGaudi = False
-geantservice.seedValue = 42
+geantservice.seedValue = 1
 
 # Expected range in a given material under which all the particle energy is automatically deposited in the given cell (no further interaction simulated)
 geantservice.g4PreInitCommands += ["/run/setCut 0.1 mm"]
