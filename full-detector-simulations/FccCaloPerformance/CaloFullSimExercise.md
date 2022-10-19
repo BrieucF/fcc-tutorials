@@ -172,9 +172,8 @@ A further important step in having an accurate description of the detector respo
 - produce the performance plot and compare it to the one without noise
 - what do you observe?
 :::{admonition} Answer
-:class: toggle
-- The resolution slightly degraded
-- The impact is small because this version of the calorimeter is being optimized to feature a low noise and at 10 GeV we are already dominated by the sampling term. 
+:class: toggle 
+- The resolution barely changed (it actually got slightly better). This is partially due to the lack of statistics but also to the fact that the noise impact is small because this version of the calorimeter has been optimized to feature a low noise and at 10 GeV we are already dominated by the sampling term. 
 :::
 
 ## Preparing for the next tutorial
